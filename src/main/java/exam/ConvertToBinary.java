@@ -1,9 +1,37 @@
 package exam;
 
-public class ConvertToBinary {
+import java.util.*;
+class ConvertToBinary
+{
+	public static void toBinary(int n)
+	{
+		int[] binaryNum = new int[100];
+		int i=0;
+		if(n<0)
+		{
+			System.out.println("Negative Number Entered");
+		}
 
-  public String toBinary(final int n) {
-    //TODO write your code here to achieve the desired result as explained in Readme file for this problem.
-    return "";
-  }
+		else
+		{
+			while(n>0)
+			{
+				binaryNum[i] = n%2;
+				n=n/2;
+				i++;
+			}
+		}
+
+		for(int j=i-1;j>=0;j--)
+		{
+			System.out.print(binaryNum[j]);
+		}
+	}
+
+	public static void main(String[] as)
+	{
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		toBinary(n);
+	}
 }
